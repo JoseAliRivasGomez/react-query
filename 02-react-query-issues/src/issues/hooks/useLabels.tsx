@@ -15,6 +15,11 @@ export const useLabels = () => {
     const labelsQuery = useQuery(
         ['labels'],
         getLabels,
+        {
+          staleTime: 1000 * 60 * 60, //cada hora se refresca
+          //initialData: [], //la data inicial fresca
+          //placeholderData: [], //la data temporal mientras hace refetch
+        }
         // {
         //   refetchOnWindowFocus: false
         // }
